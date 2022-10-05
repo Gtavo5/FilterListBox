@@ -20,6 +20,7 @@ type
     Reset: TButton;
     Delete: TCheckBox;
     FilterListBox: TFilterListBox;
+    ButtonVisible: TButton;
     procedure FilterSpacingClick(Sender: TObject);
     procedure ButtonSpacingClick(Sender: TObject);
     procedure FillterPositionClick(Sender: TObject);
@@ -28,6 +29,7 @@ type
     procedure RefreshClick(Sender: TObject);
     procedure ResetClick(Sender: TObject);
     procedure DeleteClick(Sender: TObject);
+    procedure ButtonVisibleClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -52,6 +54,11 @@ end;
 procedure TFrmDemo.ButtonSpacingClick(Sender: TObject);
 begin
   FilterListBox.ButtonSpacing:= FilterListBox.ButtonSpacing + 5;
+end;
+
+procedure TFrmDemo.ButtonVisibleClick(Sender: TObject);
+begin
+  FilterListBox.ButtonVisible:= not FilterListBox.ButtonVisible;
 end;
 
 procedure TFrmDemo.DeleteClick(Sender: TObject);

@@ -18,7 +18,7 @@ object FrmDemo: TFrmDemo
     Left = 311
     Top = 24
     Width = 178
-    Height = 169
+    Height = 201
     Caption = 'Desing'
     TabOrder = 0
     object FilterSpacing: TButton
@@ -59,17 +59,26 @@ object FrmDemo: TFrmDemo
     end
     object Delete: TCheckBox
       Left = 24
-      Top = 140
+      Top = 171
       Width = 129
       Height = 17
       Caption = 'Confirm delete item'
       TabOrder = 4
       OnClick = DeleteClick
     end
+    object ButtonVisible: TButton
+      Left = 24
+      Top = 140
+      Width = 137
+      Height = 25
+      Caption = 'ButtonVisible'
+      TabOrder = 5
+      OnClick = ButtonVisibleClick
+    end
   end
   object Items: TGroupBox
     Left = 311
-    Top = 208
+    Top = 248
     Width = 178
     Height = 201
     Caption = 'Items'

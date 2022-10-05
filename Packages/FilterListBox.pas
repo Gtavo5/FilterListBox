@@ -52,6 +52,7 @@ type
     FConfirmDelete: Boolean;
     ItemsAux: TStringList;
     IsFind: Boolean;
+    FButtonVisible: Boolean;
     procedure SetEditPosition(const Value: TPosition);
     procedure SetEditSpacing(const Value: Integer);
     procedure SetButtonPosition(const Value: TPosition);
@@ -65,6 +66,7 @@ type
     procedure ClickFilterButton(Sender: TObject);
     procedure WndProc(var Message: TMessage); override;
     procedure SetBounds(ALeft: Integer; ATop: Integer; AWidth: Integer; AHeight: Integer); override;
+    procedure SetButtonVisible(Value: Boolean);
 
   protected
     property FilterEdit: TFilterEdit read FFilterEdit;
@@ -78,6 +80,7 @@ type
     property ItemsTotalCount: Integer read FItemsTotalCount;
     property ItemsReset: Boolean write SetItemsReset;
     property ConfirmDelete: Boolean write FConfirmDelete default False;
+    property ButtonVisible: Boolean read FButtonVisible write SetButtonVisible;
 
   published
     property EditPosition: TPosition read FEditPosition write SetEditPosition default lpTop;
@@ -183,6 +186,12 @@ procedure TFilterListBox.SetButtonSpacing(const Value: Integer);
 begin
   FButtonSpacing := Value;
   SetButtonPosition(FButtonPosition);
+end;
+
+procedure TFilterListBox.SetButtonVisible(Value: Boolean);
+begin
+  FButtonVisible:= Value;
+  FFilterButton.Visible:= FButtonVisible;
 end;
 
 procedure TFilterListBox.SetName(const Value: TComponentName);
